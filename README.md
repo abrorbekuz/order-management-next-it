@@ -65,7 +65,7 @@ A lead intake and tracking system built with **Django REST Framework**, designed
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/leadmanager.git
+git clone https://github.com/abrorbekuz/leadmanager.git
 cd leadmanager
 ```
 
@@ -75,7 +75,7 @@ Create a `.env` file using the provided `.env.example`:
 
 ```env
 # .env
-SECRET_KEY=your-django-secret
+SECRET_KEY=-django-secret
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 SMTP_EMAIL=youremail@gmail.com
@@ -97,11 +97,11 @@ The application will be available at [http://localhost:8000](http://localhost:80
 
 ## 📤 Email Configuration
 
-Set the following variables in your `.env` file:
+Set the following variables in  `.env` file:
 
 ```env
-SMTP_EMAIL=youremail@gmail.com
-SMTP_PASSWORD=your-gmail-app-password
+SMTP_EMAIL=email@gmail.com
+SMTP_PASSWORD=-gmail-app-password
 ATTORNEY_EMAIL=attorney@example.com
 ```
 
