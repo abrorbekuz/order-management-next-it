@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./static:/app/static
+      - ./media/:/app/media
+
+    env_file:
+      - .env
+
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/lead_management
+  
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=lead_management
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
