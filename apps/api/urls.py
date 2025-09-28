@@ -1,8 +1,9 @@
-from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import path, include
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('v1/', include('apps.api.rest.v1.urls')),
-    path('auth/', include('rest_framework.urls')),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
+
+    path('v1/', include('apps.api.rest.v1.urls'))
 ]
